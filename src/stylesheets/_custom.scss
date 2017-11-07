@@ -1,0 +1,23 @@
+@import
+url('https://fonts.googleapis.com/css?family=Karla:100,300,400,600|Oswald:200');
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$pink: #ed1e79;
+$primary: $pink;
+
+$body-bg: $gray-900;
+$body-color: $white;
+$border-color: $gray-800;
+
+$font-family-sans-serif: 'Karla';

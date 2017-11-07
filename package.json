@@ -3,12 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.0.0-beta.2",
+    "classnames": "^2.2.5",
+    "node-sass-chokidar": "^0.0.3",
     "react": "^16.0.0",
     "react-autocomplete": "^1.7.2",
     "react-dom": "^16.0.0",
-    "react-scripts": "1.0.17"
+    "react-scripts": "1.0.17",
+    "shx": "^0.2.2"
   },
   "scripts": {
+    "prebuild-css": "shx cp -R node_modules/bootstrap/scss src/bootstrap",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

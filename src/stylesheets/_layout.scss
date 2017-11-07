@@ -1,0 +1,54 @@
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration-skip: ink;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1em;
+}
+
+header {
+  margin-bottom: 1em;
+  width: 100%;
+  padding-left: 3em;
+
+  h1 {
+    font-family: 'Oswald';
+    font-weight: 200;
+    font-size: 3em;
+    text-transform: uppercase;
+  }
+}
+
+footer {
+  margin-top: 1em;
+  color: $secondary;
+  width: 100%;
+  padding-left: 3rem;
+
+  p {
+    margin: 0 0 0.5em;
+
+    span {
+      white-space: nowrap;
+    }
+  }
+
+  .tmdb-logo {
+    display: block;
+    margin: 1em 0;
+
+    img {
+      height: 3em;
+      width: auto;
+    }
+  }
+}

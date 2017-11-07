@@ -6,7 +6,6 @@ class Movies {
   async configuration(key) {
     if (!this._configuration) {
       this._configuration = await this.fetch('configuration')
-      console.log(this._configuration)
     }
     return this._configuration[key]
   }
@@ -14,7 +13,12 @@ class Movies {
   async search(title) {
     const configuration = await this.configuration('images')
     const data = await this.fetch('search/movie', { page: 1, query: title })
-    return data.results.map(({ id, title, poster_path, release_date }) => ({
+    return data.results.slice(0, 10).map(({
+      id,
+      title,
+      poster_path,
+      release_date
+    }) => ({
       id,
       title,
       year: parseInt(release_date.substring(0, 4), 10),
@@ -23,7 +27,8 @@ class Movies {
   }
 
   async fetch(action, parameters = {}) {
-    return fetch(this.url(action, parameters)).then(response => response.json())
+    return fetch(this.url(action, parameters)).then(response =>
+      response.json())
   }
 
   url(action, parameters = {}) {
@@ -36,4 +41,4 @@ class Movies {
   }
 }
 
-export default (new Movies(process.env.REACT_APP_TMDB_KEY))
+export default new Movies(process.env.REACT_APP_TMDB_KEY)
