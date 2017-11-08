@@ -10,6 +10,7 @@
     "react-autocomplete": "^1.7.2",
     "react-dom": "^16.0.0",
     "react-scripts": "1.0.17",
+    "react-transition-group": "^2.2.1",
     "shx": "^0.2.2"
   },
   "scripts": {

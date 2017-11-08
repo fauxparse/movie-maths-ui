@@ -75,11 +75,15 @@ class App extends Component {
 
   change(which, movie) {
     this.setState({ [which]: movie })
+    if (!movie) {
+      this.setState({ third: undefined, loading: true })
+    } else {
+      this.setState({ third: sample.cowboys_and_aliens, loading: false })
+    }
   }
 
   changeOperation() {
     const operation = this.state.operation === 'plus' ? 'minus' : 'plus'
-    console.log(operation)
     this.setState({ operation })
   }
 }
